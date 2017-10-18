@@ -4,7 +4,7 @@
 
 
 ## About Me
-* Jesse Jarzynka - [jesse.cloud](http://jesse.cloud) - [github.com/jessejoe](https://github.com/jessejoe) - [j@jesse.cloud](mailto:j@jesse.cloud)
+* Jesse Jarzynka - [jessejoe.com](http://jessejoe.com) - [github.com/jessejoe](https://github.com/jessejoe) - [j@jessejoe.com](mailto:j@jessejoe.com)
 
 * Senior SDET [@CarbonBlack_Inc](https://twitter.com/CarbonBlack_Inc)
 
