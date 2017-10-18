@@ -136,6 +136,7 @@ r = requests.get('https://httpbin.org/basic-auth/user/passwd',
 Also check out http://www.pythontutor.com/
 
 Links:
+* http://jessejoe.com/other/intro_to_pdb/slides/
 * https://docs.python.org/3/library/pdb.html
 * https://github.com/gotcha/ipdb
 * http://docs.python-requests.org
