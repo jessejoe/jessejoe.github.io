@@ -131,6 +131,13 @@ r = requests.get('https://httpbin.org/basic-auth/user/passwd',
 
 
 
+There's other debuggers too!
+
+* [PuDB](Bhttp://heather.cs.ucdavis.edu/~matloff/pudb.html)
+![](http://heather.cs.ucdavis.edu/~matloff/pudb17.png)
+
+
+
 ## We did it!
 
 Also check out http://www.pythontutor.com/
