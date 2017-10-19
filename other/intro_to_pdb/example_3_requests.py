@@ -1,4 +1,5 @@
 import logging
+from pprint import pformat
 from requests import session, Request
 
 logging.basicConfig(level=logging.DEBUG)
@@ -18,7 +19,7 @@ class MySession():
         prepped = self.session.prepare_request(req)
         resp = self.session.send(prepped)
         resp.raise_for_status()
-        logging.info(resp.json())
+        logging.info('JSON response:\n%s', pformat(resp.json()))
 
 
 api = MySession('https://httpbin.org')
