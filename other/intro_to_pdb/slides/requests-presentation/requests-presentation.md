@@ -114,7 +114,7 @@ r = requests.get('https://httpbin.org/basic-auth/user/passwd',
 [example 3 fail with `ipdb.set_trace()`]
 
 
-[example 3 comparison with `ipdb.runcall(requests.post, url='https://httpbin.org/post', json={'foo': 'bar'})`]
+[example 3 comparison with `ipdb.runcall(requests.post, url='https://httpbin.org/post', json={'foo': 'bar'}).json()`]
 
 
 
