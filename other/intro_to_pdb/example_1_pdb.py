@@ -3,8 +3,9 @@ def delete_foo(list_of_words):
         if word == 'foo':
             del (list_of_words[counter])
 
-    print(list_of_words)
+    print('After: {}'.format(list_of_words))
 
-
-delete_foo(['foo', 'bar', 'baz'])
-#delete_foo(['foo', 'foo', 'bar', 'baz'])
+words = ['foo', 'bar', 'baz']
+#words = ['foo', 'foo', 'bar', 'baz']
+print('Before: {}'.format(words))
+delete_foo(words)
