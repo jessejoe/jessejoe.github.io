@@ -33,7 +33,7 @@
           <!--(bake-start _if="personal_info.phone")-->
           <div>
             <a href="tel:{{personal_info.phone}}">{{personal_info.phone | clearWhitespaces}}
-            <i class="fa fa-phone"></i></a>
+            <i class="fa-solid fa-mobile-button" style="margin-left: 2.5px; margin-right: 2.5px;"></i></a>
           </div>
           <!--(bake-end)-->
 
@@ -55,7 +55,7 @@
           <!--(bake-start _foreach="github:personal_info.github")-->      
           <div>
             <a href="{{github.url | trim}}" target="_blank">{{github.title | trim}}
-            <i class="fa fa-github"></i></a>
+            <i class="fa-brands fa-github"></i></a>
           </div>
           <!--(bake-end)-->
           <!--(bake-end)-->
@@ -63,14 +63,14 @@
           <!--(bake-start _if="personal_info.stackoverflow")-->
           <div>
             <a href="{{personal_info.stackoverflow.url | trim}}" target="_blank">{{personal_info.stackoverflow.title | trim}}
-            <i class="fa fa-stack-overflow"></i></a>
+            <i class="fa-brands fa-stack-overflow"></i></a>
           </div>
           <!--(bake-end)-->
 
           <!--(bake-start _if="personal_info.pdf")-->
           <div>
             <a href="{{personal_info.pdf}}">Download PDF
-            <i class="fa fa-file-pdf-o"></i></a>
+            <i class="fa-solid fa-file-pdf"></i></a>
           </div>
           <!--(bake-end)-->
           
@@ -126,7 +126,7 @@
                   <a href="{{project.link | trim}}" target="_blank"><i class="fa fa-globe"></i></a>
                   <!--(bake-end)-->
                   <!--(bake-start _if="project.github")-->
-                  <a href="{{project.github | trim}}" target="_blank"><i class="fa fa-github"></i></a>
+                  <a href="{{project.github | trim}}" target="_blank"><i class="fa-brands fa-github"></i></a>
                   <!--(bake-end)-->
                 </h1>
               </div>
@@ -144,7 +144,7 @@
               <div class="flex-row flex-space-between">
                 <h1>{{contribution.name | trim}}
                   <!--(bake-start _foreach="github:contribution.github_links")-->
-                  <a href="{{github | trim}}" target="_blank"><i class="fa fa-github"></i></a>
+                  <a href="{{github | trim}}" target="_blank"><i class="fa-brands fa-github"></i></a>
                   <!--(bake-end)-->
 
                   <!--(bake-start _foreach="link:contribution.links")-->

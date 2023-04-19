@@ -120,7 +120,7 @@ module.exports = function(grunt) {
       all: {
         files: [
           {expand: true, cwd: 'src/img/', src: ['**'], dest: 'docs/img/'},
-          {expand: true, cwd: 'src/fonts/', src: ['**'], dest: 'docs/fonts/'}
+          {expand: true, cwd: 'src/webfonts/', src: ['**'], dest: 'docs/webfonts/'}
         ]
       }
     }
