@@ -1,53 +1,53 @@
 [{
   "name": "linux-nfs",
-  "description": "[BUG - C] Caching bug in the readdirplus operation in the NFS client of the Linux kernel",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-solid fa-c\" title=\"C\"></i> Caching bug in the readdirplus operation in the NFS client of the Linux kernel",
   "links": ["https://www.spinics.net/lists/linux-nfs/msg34682.html", "https://www.spinics.net/lists/linux-nfs/msg34729.html", "https://docs.google.com/document/d/1saQV-yRXCnmLDWrNd2korc-TiAo9eMPf1WwoSej7rJU/edit?usp=sharing"]
 },{
   "name": "Jenkins - Pipeline: Job plugin",
-  "description": "[BUG - Javascript/Groovy] Console for multi-branch pipelines has gotten progressively slower over time",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-jenkins\" title=\"Javascript/Groovy\"></i> Console for multi-branch pipelines has gotten progressively slower over time",
   "github_links": ["https://github.com/jenkinsci/workflow-job-plugin/pull/164#issuecomment-1029380147"]
 },{
   "name": "Selenium",
-  "description": "[BUG - Java] When a Windows client is killed, Grid nodes can leave sessions/browsers open indefinitely",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-java\" title=\"Java\"></i> When a Windows client is killed, Grid nodes can leave sessions/browsers open indefinitely",
   "github_links": ["https://github.com/SeleniumHQ/selenium/issues/2332"]
 },{
   "name": "Appium",
-  "description": "[BUG - JavaScript] Can no longer specify browserName with Grid desiredcaps",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-js-square\" title=\"JavaScript\"></i> Can no longer specify browserName with Grid desiredcaps",
   "github_links": ["https://github.com/appium/appium/issues/6412", "https://github.com/appium/appium-ios-driver/pull/127", "https://github.com/appium/appium-android-driver/pull/139"]
 },{
   "name": "Twine",
-  "description": "[ENHANCEMENT - Python] Print the response content when upload fails",
+  "description": "<i class=\"fa-solid fa-wand-magic-sparkles\" title=\"Enhancement\"></i><i class=\"fa-brands fa-python\" title=\"Python\"></i> Print the response content when upload fails",
   "github_links": ["https://github.com/pypa/twine/pull/337"]
 },{
   "name": "nginx-proxy",
-  "description": "[BUG - Bash/Docker] Change dhparam positional args to be inherited vars, standardize naming",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-docker\" title=\"Bash/Docker\"></i> Change dhparam positional args to be inherited vars, standardize naming",
   "github_links": ["https://github.com/nginx-proxy/nginx-proxy/pull/913#issuecomment-478276705", "https://github.com/nginx-proxy/nginx-proxy/pull/1263"]
 },{
   "name": "Graylog/collector-sidecar",
-  "description": "[ENHANCEMENT - Ruby] Specify OS when building packages so they can be built on Mac",
+  "description": "<i class=\"fa-solid fa-wand-magic-sparkles\" title=\"Enhancement\"></i><i class=\"fa-regular fa-gem\" title=\"Ruby\"></i> Specify OS when building packages so they can be built on Mac",
   "github_links": ["https://github.com/Graylog2/collector-sidecar/pull/94"]
 },{
   "name": "Golang service library",
-  "description": "[BUG - Go/Bash] SysV init script can lead to multiple processes running",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-golang\" title=\"Go/Bash\"></i> SysV init script can lead to multiple processes running",
   "github_links": ["https://github.com/kardianos/service/issues/78", "https://github.com/kardianos/service/pull/79"]
 },{
   "name": "Golang service library",
-  "description": "[ENHANCEMENT - Go/Bash] Add support for loading environment variables from optional file",
+  "description": "<i class=\"fa-solid fa-wand-magic-sparkles\" title=\"Enhancement\"></i><i class=\"fa-brands fa-golang\" title=\"Go/Bash\"></i> Add support for loading environment variables from optional file",
   "github_links": ["https://github.com/kardianos/service/pull/80"]
 },{
   "name": "BitBar",
-  "description": "[ENHANCEMENT - Bash] Add more advanced VPN status/connection script",
+  "description": "<i class=\"fa-solid fa-wand-magic-sparkles\" title=\"Enhancement\"></i><i class=\"fa-solid fa-scroll\" title=\"Bash\"></i> Add more advanced VPN status/connection script",
   "github_links": ["https://github.com/matryer/bitbar-plugins/pull/388"]
 },{
   "name": "Ics.py",
-  "description": "[BUG - Python] Improve trigger duration parsing logic",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-python\" title=\"Python\"></i> Improve trigger duration parsing logic",
   "github_links": ["https://github.com/C4ptainCrunch/ics.py/pull/148"]
 },{
   "name": "Spotipy",
-  "description": "[ENHANCEMENT - Python] Add cache_path as a parameter to prompt_for_user_token()",
+  "description": "<i class=\"fa-solid fa-wand-magic-sparkles\" title=\"Enhancement\"></i><i class=\"fa-brands fa-python\" title=\"Python\"></i> Add cache_path as a parameter to prompt_for_user_token()",
   "github_links": ["https://github.com/plamere/spotipy/issues/167", "https://github.com/plamere/spotipy/pull/169"]
 },{
   "name": "Falcon",
-  "description": "[BUG - Python] Fix flake8 errors and add additional linting coverage as part of PyCon 2016 Open Source sprints",
+  "description": "<i class=\"fa-solid fa-bug\" title=\"Bug\"></i><i class=\"fa-brands fa-python\" title=\"Python\"></i> Fix flake8 errors and add additional linting coverage as part of PyCon 2016 Open Source sprints",
   "github_links": ["https://github.com/falconry/falcon/pull/808"]
 }]
