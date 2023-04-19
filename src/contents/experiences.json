@@ -1,8 +1,17 @@
 [{
+  "company": "Disney Streaming",
+  "link": "https://dmedmedia.disney.com/",
+  "role": "Lead Software Engineer",
+  "date": "Aug 2022 - Present",
+  "location": "Remote",
+  "description": "Member of Core Infrastructure team",
+  "description_bullets": [
+  ]
+},{
   "company": "VMware",
   "link": "https://www.vmware.com",
   "role": "Senior Site Reliability Engineer",
-  "date": "Oct. 2019 - Present",
+  "date": "Oct. 2019 - Aug. 2022",
   "location": "Remote",
   "description": "Maintain and manage testing lab for all of VMware Security Business Unit (Carbon Black)",
   "description_bullets": [
