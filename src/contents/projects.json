@@ -1,0 +1,18 @@
+[{
+  "name": "wcsd-covid",
+  "description": "Script for pulling Covid data from the Williamsville Central School District daily updates and publishing them to public charts using Python for web scraping, and Pandas for data analysis",
+  "link": "https://wcsd-covid.github.io/",
+  "github": "https://github.com/jessejoe/wcsd-covid"
+},{
+  "name": "boom-client",
+  "description": "Library for controlling the Boom Equalizer software for Mac, reverse engineered from packet captures",
+  "github": "https://github.com/jessejoe/boom_client"
+},{
+  "name": "kisi-python",
+  "description": "Client and scripts for interacting with the KISI lock API",
+  "github": "https://github.com/jessejoe/kisi-python"
+},{
+  "name": "Streaming Album Playlist Maker",
+  "description": "Script to create playlists from lists of album names for music services like Spotify",
+  "github": "https://github.com/jessejoe/streaming_album_playlist_maker"
+}]
