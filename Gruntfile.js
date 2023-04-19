@@ -6,19 +6,19 @@ module.exports = function(grunt) {
     dev: true,
 
     less: {
-      dist: {
+      docs: {
         files: {
-          'dist/css/main.less.css': 'src/less/build.less',
-          'dist/css/print.less.css': 'src/less/print.less',
+          'docs/css/main.less.css': 'src/less/build.less',
+          'docs/css/print.less.css': 'src/less/print.less',
         }
       }
     },
 
     autoprefixer: {
-      dist: {
+      docs: {
         files: {
-          'dist/css/main.less.css': 'dist/css/main.less.css',
-          'dist/css/print.less.css': 'dist/css/print.less.css'
+          'docs/css/main.less.css': 'docs/css/main.less.css',
+          'docs/css/print.less.css': 'docs/css/print.less.css'
         },
         options: {
           browsers: ['last 2 versions', 'ie >= 8']
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     },
 
     bake: {
-      dist: {
+      docs: {
         options: {
           basePath: 'src/html/',
 
@@ -86,14 +86,14 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/html/',
           src: ['**/*.html', '!**/_*.html'],
-          dest: 'dist/'
+          dest: 'docs/'
         }]
       }
     },
 
     clean: {
       prebuild: {
-        src: ['dist/**/*.less.css', '*.html']
+        src: ['docs/**/*.less.css', '*.html']
       }
     },
 
@@ -102,25 +102,25 @@ module.exports = function(grunt) {
         keepSpecialComments: 0
       },
 
-      dist: {
+      docs: {
         files: {
-          'dist/css/main.min.less.css': 'dist/css/main.less.css',
-          'dist/css/print.min.less.css': 'dist/css/print.less.css'
+          'docs/css/main.min.less.css': 'docs/css/main.less.css',
+          'docs/css/print.min.less.css': 'docs/css/print.less.css'
         }
       }
     },
 
     open: {
       dev: {
-        path: process.cwd() + '/dist/index.html'
+        path: process.cwd() + '/docs/index.html'
       }
     },
 
     copy: {
       all: {
         files: [
-          {expand: true, cwd: 'src/img/', src: ['**'], dest: 'dist/img/'},
-          {expand: true, cwd: 'src/fonts/', src: ['**'], dest: 'dist/fonts/'}
+          {expand: true, cwd: 'src/img/', src: ['**'], dest: 'docs/img/'},
+          {expand: true, cwd: 'src/fonts/', src: ['**'], dest: 'docs/fonts/'}
         ]
       }
     }
