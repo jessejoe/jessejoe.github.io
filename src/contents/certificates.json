@@ -1,6 +1,17 @@
-[{
+[
+  {
     "title": "CCNA - Cisco Certified Network Associate",
     "authority": "Cisco",
+    "date": "",
+    "description": ""
+  },{
+    "title": "Security Engineering on AWS training",
+    "authority": "AWS",
+    "date": "",
+    "description": ""
+  },{
+    "title": "Architecting on AWS training",
+    "authority": "AWS",
     "date": "",
     "description": ""
   }
