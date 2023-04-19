@@ -2,14 +2,14 @@
   "name": "Jesse Jarzynka",
   "photo": "img/photo.png",
   "profession": "Senior Site Reliability and Automation Engineer",
-  "summary": "Experienced engineer with diverse background in automated testing, CI/CD, release engineering, systems administration, networking, and working remote. Obsessively curious, continuously learning new things, and looking for new challenges.",
+  "summary": "Experienced engineer with diverse background in devops/automation, CI/CD, release engineering, systems administration, networking, video streaming, and working remote. Obsessively curious, continuously learning new things, and looking for new challenges.",
   "mail": "j@jessejoe.com",
   "phone": "716-222-2325",
   "address": {
     "title": "Buffalo, NY",
     "url": "https://www.google.com/maps/place/Buffalo,+NY/@42.8962176,-78.9344818,12z/"
   },
-  "pdf": "https://www.jessejoe.com/JesseJarzynkaResume.pdf",
+  "pdf": "JesseJarzynkaResume.pdf",
   "personal_site": {
     "title": "jessejoe.com",
     "url": "https://jessejoe.com/"
