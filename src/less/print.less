@@ -3,8 +3,22 @@
   //
   // NOTE: This should be removed when we switch to fond that has bold weights (600+).
   //       Current font (EB Garamond) is only available in weight 400.
+  //
   * {
     font-weight: initial !important;
+  }
+
+  // jjarzynka 5/25/22 - have to set this otherwise newer Font Awesome icons disappear when printing
+	.fa,
+	.fa-brands,
+	.fa-solid,
+	.fa-regular {
+    font-weight: var(--fa-style,900) !important;
+	}
+
+  // jjarzynka 5/25/22 - always override background so can print nice text colors without background
+  body, html {
+    background-color: white;
   }
 
   .container {
@@ -19,4 +33,5 @@
   section {
     page-break-before: avoid;
   }
+
 }

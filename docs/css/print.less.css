@@ -2,6 +2,16 @@
   * {
     font-weight: initial !important;
   }
+  .fa,
+  .fa-brands,
+  .fa-solid,
+  .fa-regular {
+    font-weight: var(--fa-style, 900) !important;
+  }
+  body,
+  html {
+    background-color: white;
+  }
   .container {
     width: 100% !important;
   }
