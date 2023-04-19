@@ -4,7 +4,7 @@
   "role": "Senior Site Reliability Engineer",
   "date": "Oct. 2019 - Present",
   "location": "Remote",
-  "description": "Maintain and manage testing lab for all of VMware Security Business Unit",
+  "description": "Maintain and manage testing lab for all of VMware Security Business Unit (Carbon Black)",
   "description_bullets": [
     "Helped spearhead effort to move entire lab across the country from Massachusetts to Washington State with almost no downtime or impact to users",
     "Maintain large vSphere lab environment serving hundreds of engineers and thousands of VMs per week",
