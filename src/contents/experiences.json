@@ -10,7 +10,7 @@
     "Maintain large vSphere lab environment serving hundreds of engineers and thousands of VMs per week",
     "Maintain core services for testing including multiple Jenkins servers, Gitlab, Artifactory, vSphere/vCenter, DNS/firewalls/networking, etc.",
     "Migrate existing services to on-prem Kubernetes solutions using Tanzu (TKG)",
-    "Help users debug complex pipelines and automated testing workflows, as well as handle",
+    "Help users debug complex pipelines and automated testing workflows, as well as handle all issues that occur within the lab",
     "Automate deployment of servers and services using Infrastructure as Code (IaC) and containers",
     "Automate common tasks and monitoring using scripts and CI/CD",
     "Automate deployment and management of servers with Puppet/Ansible",
