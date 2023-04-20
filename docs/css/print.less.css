@@ -3,7 +3,7 @@
   html {
     background-color: white;
   }
-  .info-left p {
+  p {
     max-width: -webkit-max-content;
     max-width: max-content;
   }

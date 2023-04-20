@@ -102,6 +102,20 @@
       </div>
 
       <div class="col-sm-12 col-md-6 half-page" id="second-half-page">
+        <!--(bake-start _if="recommendations.length")-->
+        <div class="block">
+          <!--(bake _section-header.html title="Recommendations")-->
+          <!--(bake-start _foreach="recommendation:recommendations")-->
+            <section class="experience">
+              <div class="flex-row flex-space-between">
+              </div>
+              <p><i>"{{recommendation.description | trim}}"</i></p>
+              <footer class="blockquote-footer" style="font-size: 1em;">{{recommendation.name | trim}} - {{recommendation.role | trim}}</footer>
+            </section>
+          <!--(bake-end)-->
+        </div>
+        <!--(bake-end)-->
+
         <!--(bake-start _if="skills.length")-->
         <div class="block">
           <!--(bake _section-header.html title="Skills")-->
