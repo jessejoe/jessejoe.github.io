@@ -1,4 +1,8 @@
 [{
+  "name": "webcal-combiner",
+  "description": "Utility to combine multiple webcals into a single calendar",
+  "github": "https://github.com/jessejoe/webcal-combiner"
+},{
   "name": "wcsd-covid",
   "description": "Script for pulling Covid data from the Williamsville Central School District daily updates and publishing them to public charts using Python for web scraping, and Pandas for data analysis",
   "link": "https://wcsd-covid.github.io/",
