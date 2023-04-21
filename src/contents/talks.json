@@ -1,0 +1,6 @@
+[{
+    "title": "Intro to pdb or: How I Found a bug in Requests",
+    "description": "Talk at local Python Buffalo meetup: \"Covering basic debugging using the Python debugger (pdb) without an IDE, as well as some more efficient debugging with the more feature-rich iPython debugger (ipdb). We'll mix in a little HTTP troubleshooting to show how I found a bug in the popular Python Requests module.\"",
+    "url": "https://www.meetup.com/Python-Buffalo/events/243473519/",
+    "slides": "https://www.jessejoe.com/other/intro_to_pdb/slides/"
+}]

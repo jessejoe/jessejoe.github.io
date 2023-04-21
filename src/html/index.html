@@ -129,6 +129,27 @@
         </div>
         <!--(bake-end)-->
         
+        <!--(bake-start _if="talks.length")-->
+        <div class="block">
+          <!--(bake _section-header.html title="Talks/Presentations")-->
+          <!--(bake-start _foreach="talk:talks")-->
+            <section class="project">
+              <div class="flex-row flex-space-between">
+                <h1>{{talk.title | trim}}
+                  <!--(bake-start _if="talk.url")-->
+                  <a href="{{talk.url | trim}}" target="_blank"><i class="fa-brands fa-meetup"></i></a>
+                  <!--(bake-end)-->
+                  <!--(bake-start _if="talk.slides")-->
+                  <a href="{{talk.slides | trim}}" target="_blank"><i class="fa-solid fa-person-chalkboard"></i></a>
+                  <!--(bake-end)-->
+                </h1>
+              </div>
+              <p>{{talk.description | trim}}</p>
+            </section>
+          <!--(bake-end)-->
+        </div>
+        <!--(bake-end)-->
+
         <!--(bake-start _if="projects.length")-->
         <div class="block">
           <!--(bake _section-header.html title="Open Source Projects")-->
