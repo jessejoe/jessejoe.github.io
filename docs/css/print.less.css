@@ -22,4 +22,29 @@
   section {
     page-break-before: avoid;
   }
+  header .info-pic {
+    -ms-flex-preferred-size: 20%;
+    flex-basis: 15%;
+  }
+  header .info-left {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+  header .info-right {
+    -ms-flex-preferred-size: 30%;
+    flex-basis: 35%;
+    text-align: right !important;
+  }
+  header .info-right i {
+    float: none;
+  }
+  header .info-pic + .info-left .name {
+    margin-top: 0;
+  }
+  .flex-align-center {
+    -ms-flex-line-pack: normal;
+    align-content: normal;
+    -ms-flex-align: normal;
+    align-items: normal;
+  }
 }
