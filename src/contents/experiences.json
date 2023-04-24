@@ -8,9 +8,9 @@
   "description_bullets": [
     "Contribute to the implementation and deployment of the data plane and supporting software for the Disney Origin, Mid-Tier, and Edge appliances and CDNs",
     "Update Varnish HTTP cache VCL configurations and add Varnish Test Cases (VTC) for testing HTTP request behavior",
-    "Expand CLI utilities to administer and maintain caching infrastructure",
+    "Expand Python CLI utilities to administer and maintain caching infrastructure",
     "Improve Server Maintenance feature to pull Varnish servers out of cluster without impacting users including coordination with Varnish, Apache Traffic Router/Monitor, internal monitoring/configuration management, and Bird/BGP",
-    "Expand testing of Varnish and Server Maintenance into containers to improve test coverage before deploying changes",
+    "Expand testing of Varnish and Server Maintenance into containers to improve test coverage before deploying changes (Python/pytest)",
     "Design and implement operational tooling for health monitoring, traffic engineering, and other critical functions",
     "Apply principled engineering practices including unit testing, integration testing, continuous integration"
   ]
