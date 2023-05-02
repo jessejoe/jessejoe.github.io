@@ -3,6 +3,11 @@
   "description": "Utility to combine multiple webcals into a single calendar",
   "github": "https://github.com/jessejoe/webcal-combiner"
 },{
+  "name": "vmw-avgo-calculator",
+  "description": " Streamlit app for calculating values of VMW/AVGO acquisition related stock ",
+  "link": "https://vmw-avgo-calculator.streamlit.app/",
+  "github": "https://github.com/jessejoe/vmw-avgo-calculator"
+},{
   "name": "wcsd-covid",
   "description": "Script for pulling Covid data from the Williamsville Central School District daily updates and publishing them to public charts using Python for web scraping, and Pandas for data analysis",
   "link": "https://wcsd-covid.github.io/",
