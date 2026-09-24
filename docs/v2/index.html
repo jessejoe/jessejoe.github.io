@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Runs before the stylesheet paints anything, so an explicit saved
+       preference applies immediately -- no flash of the wrong theme. If
+       nothing is saved, this does nothing and the prefers-color-scheme
+       media query in theme_vars.html handles the OS default. */
+    try {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    } catch (e) {}
+  </script>
+  <title>Jesse Jarzynka — Lead Software and Automation Engineer</title>
+<meta name="description" content="Experienced engineer with a diverse background in Python development, DevOps/automation, CI/CD, release engineering, systems administration, networking, video streaming, and working remote. Obsessively curious, continuously learning new things, and looking for new challenges.
+">  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+<style>
+:root {
+  --heading: #3B5B7C;
+  --accent: #B4884D;
+  --subheadings: #5B6B7A;
+  --body-text: #242B33;
+  --muted-text: #6B7684;
+  --background: #FFFFFF;
+  --panel-background: #F4F6F8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --heading: #8FB4DE;
+    --accent: #D9A868;
+    --subheadings: #A6B0BC;
+    --body-text: #E7E9EC;
+    --muted-text: #8B94A0;
+    --background: #14171B;
+    --panel-background: #1F242B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --heading: #8FB4DE;
+  --accent: #D9A868;
+  --subheadings: #A6B0BC;
+  --body-text: #E7E9EC;
+  --muted-text: #8B94A0;
+  --background: #14171B;
+  --panel-background: #1F242B;
+  color-scheme: dark;
+}
+</style></head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
+    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2.5 12H5M19 12h2.5M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  </button>
+  <div class="page">
+
+<header class="header">
+  <img class="header__photo" src="img/photo.png" alt="Jesse Jarzynka">
+  <div>
+    <h1 class="header__name">Jesse Jarzynka</h1>
+    <div class="header__profession">Lead Software and Automation Engineer</div>
+<p class="header__summary">Experienced engineer with a diverse background in Python development, DevOps/automation, CI/CD, release engineering, systems administration, networking, video streaming, and working remote. Obsessively curious, continuously learning new things, and looking for new challenges.
+</p>    <div class="contact-list">
+<a href="mailto:j@jessejoe.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>j@jessejoe.com</a><a href="tel:716-222-2325"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1.1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1z"/></svg>716-222-2325</a><a href="https://www.google.com/maps/place/Buffalo,+NY/@42.8962176,-78.9344818,12z/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg>Buffalo, NY</a><a href="https://jessejoe.com/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9S9.5 5.6 12 3z"/></svg>jessejoe.com</a><a href="https://github.com/jessejoe" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg>github.com/jessejoe</a><a href="https://github.com/jessecarbon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg>github.com/jessecarbon</a><a href="https://github.com/jessehudl" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg>github.com/jessehudl</a><a href="https://stackoverflow.com/users/2149641" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>stackoverflow.com/users/2149641</a>    </div>
+  </div>
+</header>    <div class="layout">
+      <div class="col-main">
+<section class="section">
+  <h2>Experience</h2>
+
+<div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Lead Software Engineer</span> —
+<a href="https://dmedmedia.disney.com/" target="_blank" rel="noopener">Disney Streaming</a>    </div>
+    <div class="entry__meta">Aug 2022 - Present · Remote</div>
+  </div>
+<p class="entry__desc">Member of Content Distribution &amp; Origin team serving content for Disney+, Hulu, ESPN+, etc.</p>      <ul class="bullets"><li>Contribute to the implementation and deployment of the data plane and supporting software for the Disney Origin, Mid-Tier, and Edge appliances and CDNs</li><li>Improve Server Maintenance feature to pull Varnish servers out of cluster without impacting users, including coordination with Varnish, Apache Traffic Router/Monitor, internal monitoring/configuration management, and Bird/BGP</li><li>Design and implement operational tooling for health monitoring, traffic engineering, and other critical functions</li></ul>
+    <div class="reveal reveal--bullets">
+      <input type="checkbox" id="reveal-bullets-disney-streaming-lead-software-engineer" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 1.55em;">
+        <ul class="bullets"><li>Update Varnish HTTP cache VCL configurations and add Varnish Test Cases (VTC) for testing HTTP request behavior</li><li>Expand Python CLI utilities to administer and maintain caching infrastructure</li><li>Expand testing of Varnish and Server Maintenance into containers to improve test coverage before deploying changes (Python/pytest)</li><li>Apply principled engineering practices including unit testing, integration testing, continuous integration</li></ul>
+      </div>
+      <label for="reveal-bullets-disney-streaming-lead-software-engineer" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 4 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Senior Site Reliability Engineer</span> —
+<a href="https://www.vmware.com" target="_blank" rel="noopener">VMware</a>    </div>
+    <div class="entry__meta">Oct. 2019 - Aug. 2022 · Remote</div>
+  </div>
+<p class="entry__desc">Maintained and managed testing lab for all of VMware Security Business Unit (Carbon Black)</p>      <ul class="bullets"><li>Helped spearhead effort to move entire lab across the country from Massachusetts to Washington State with almost no downtime or impact to users</li><li>Maintained large vSphere lab environment serving hundreds of engineers and thousands of VMs per week</li><li>Migrated existing services to on-prem Kubernetes solutions using Tanzu (TKG)</li></ul>
+    <div class="reveal reveal--bullets">
+      <input type="checkbox" id="reveal-bullets-vmware-senior-site-reliability-engineer" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 1.55em;">
+        <ul class="bullets"><li>Maintained core services for testing including multiple Jenkins servers, Gitlab, Artifactory, vSphere/vCenter, DNS/firewalls/networking, etc.</li><li>Helped users debug complex pipelines and automated testing workflows, as well as handled all issues that occur within the lab</li><li>Automated deployment of servers and services using Infrastructure as Code (IaC) and containers</li><li>Automated common tasks and monitoring using scripts and CI/CD</li><li>Automated deployment and management of servers with Puppet/Ansible</li><li>Advocated for security across VMware and proactively looked for improvements and weaknesses</li><li>Mentored and assisted junior engineers</li></ul>
+      </div>
+      <label for="reveal-bullets-vmware-senior-site-reliability-engineer" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 7 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Senior Software Development Engineer in Test</span> —
+<a href="https://www.carbonblack.com" target="_blank" rel="noopener">Carbon Black</a>    </div>
+    <div class="entry__meta">Aug. 2016 - Oct. 2019 · Remote</div>
+  </div>
+<p class="entry__desc">Automation, continuous integration, QA testing</p>      <ul class="bullets"><li>Helped design and implement automated testing suite for multiple products across Windows/Linux/Mac using Python/pytest, Docker, vCenter, and Jenkins w/Groovy pipelines</li><li>Mentored existing engineers on best practices and provide code reviews</li><li>Evangelized and promoted automation across the company and leadership</li></ul>
+    <div class="reveal reveal--bullets">
+      <input type="checkbox" id="reveal-bullets-carbon-black-senior-software-development-engineer-in-test" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 1.55em;">
+        <ul class="bullets"><li>Automated existing manual test cases and test plans to free up manual tester time and provide more coverage</li><li>Worked with Release Engineering to hook automation and testing into the build process</li><li>Implemented Graylog (ELK) for log monitoring in test environments to monitor hard to find bugs and crashes</li><li>Assisted with containerizing the product with Docker in order to deploy on-demand test environments</li><li>Collaborated with developers on improving system quality and establishing efficient and thorough testing</li><li>Assisted DevOps and Systems Engineering teams on creating test environments, test labs, and consult on technologies and products used</li><li>Interviewed new hire candidates across roles</li></ul>
+      </div>
+      <label for="reveal-bullets-carbon-black-senior-software-development-engineer-in-test" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 7 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Quality Engineer</span> —
+<a href="https://www.hudl.com" target="_blank" rel="noopener">Hudl</a>    </div>
+    <div class="entry__meta">Sept. 2014 - Aug. 2016 · Remote</div>
+  </div>
+<p class="entry__desc">Automation, continuous integration, QA testing</p>      <ul class="bullets"><li>Authored and maintained scalable and expandable automated testing framework in Python for Selenium (web) and Appium (mobile) testing, as well as HTTP/REST/GraphQL integration testing</li><li>Interviewed, graded projects, and helped hire dozens of candidates across all roles including interns, engineers, PMs, and VPs</li><li>Co-lead &#34;Security Guild&#34;, focused on security related issues at Hudl, and best practices</li></ul>
+    <div class="reveal reveal--bullets">
+      <input type="checkbox" id="reveal-bullets-hudl-quality-engineer" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 1.55em;">
+        <ul class="bullets"><li>Added new automation, tests, and CI across many different areas of the product team and internal infrastructure, wherever needed</li><li>Provided code reviews and assistance to other Quality Engineers and Analysts</li><li>Helped maintain Hudl&#39;s AWS cloud infrastructure and participated in on-call rotation</li><li>Documented limitations and continually pushed for improvements to infrastructure and processes to increase testing consistency</li><li>Continually researched new technologies, testing frameworks, and libraries</li><li>Improved and pushed bug fixes upstream to open source projects Hudl uses</li><li>Mentored new employees</li></ul>
+      </div>
+      <label for="reveal-bullets-hudl-quality-engineer" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 7 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+
+</div>
+<div class="reveal reveal--entries">
+  <input type="checkbox" id="reveal-earlier-roles" class="reveal__checkbox">
+  <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+<div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Software QA Engineer</span> —
+<a href="https://www.averesystems.com" target="_blank" rel="noopener">Avere Systems</a>    </div>
+    <div class="entry__meta">Feb. 2013 - Aug. 2014 · Remote</div>
+  </div>
+<p class="entry__desc">Tested products and features to maintain quality and find bugs</p>      <ul class="bullets"><li>Responsible for writing software automation for testing and debugging Avere products</li><li>Worked with developers finding, fixing, and verifying product bugs and solutions</li><li>Discovered weaknesses or enhancements that make the product better or easier to use</li><li>Wrote and improved existing test plans and documentation</li><li>Verified new product features are well tested and working properly before shipping</li><li>Implemented Selenium web testing framework for cross-browser automation</li><li>Test focus areas: advanced networking, installation/upgrade, management and configuration, and GUI</li></ul>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Customer Experience Engineer</span> —
+<a href="https://www.averesystems.com" target="_blank" rel="noopener">Avere Systems</a>    </div>
+    <div class="entry__meta">Jul. 2011 - Feb. 2013 · Pittsburgh, PA</div>
+  </div>
+<p class="entry__desc">Member of team of versatile support engineers handling all customer and internal support requests</p>      <ul class="bullets"><li>Required to be resourceful and efficient in order to solve issues with minimal training or documentation</li><li>Utilizing a large variety of skill sets to take each issue from initial troubleshooting to resolution including log/statistic analysis, internal troubleshooting commands, OS debugging, packet capture analysis, internal process tracing and debugging, as well as engaging engineers when necessary</li><li>Required to discover root cause of each issue, including isolation to outside problems not related to the Avere product such as switch or routing problems, network bottlenecks, hardware failures, back-end storage communication, etc.</li><li>Direct customer interaction via phone, email, and desktop sharing resolving a wide range of issues from initial configuration, to performance analysis, to complex network/storage/product troubleshooting</li><li>Required to document, collect data, and reproduce issues in house if possible, providing engineers with as much information as possible to fix software issues</li><li>Providing feedback on product shortcomings, product enhancements, and customer pains</li><li>Interfacing with all aspects of company including sales, engineers, marketing, customers, devops, etc.</li><li>Trained new engineers as well as interviewing potential new candidates</li><li>Wrote tools and scripts for customer configuration, data analysis, and visualization</li><li>Documented common problems and solutions</li><li>Participated in weekly 24x7 on-call rotation</li></ul>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Linux Systems Administrator</span> —
+<a href="https://www.localnet.com" target="_blank" rel="noopener">LocalNet Corp.</a>    </div>
+    <div class="entry__meta">Feb. 2009 - Jul. 2011 · Buffalo, NY</div>
+  </div>
+<p class="entry__desc">Member of small team of administrators responsible for 300+ server infrastructure</p>      <ul class="bullets"><li>One of only two local admins who were responsible for all server hardware installation, troubleshooting and maintenance including being trusted with full security access to all buildings, hardware, and software</li><li>Regularly on-call in rotation with other admins, as well as &#34;hands-on&#34; on-call for remote admins when hardware needs physical interaction or maintenance</li><li>Performed complete power audit of server infrastructure and found that power could be reduced between $13-15k per year by virtualizing physical servers</li><li>Created VMware ESXi infrastructure and began complete physical-to-virtual conversion of entire server infrastructure, even manually converting outdated servers that rely on unsupported hardware</li><li>Greatly improved server infrastructure by instituting RAID on core non-load-balanced servers as well as helped roll out completely customized Nagios monitoring system</li><li>Upgraded customer database from an outdated version of MySQL to new updated hardware with RAID w/BBWC, replication, optimized configuration settings, and appropriate tables converted to InnoDB from MyISAM with performance improvements of 500% in some cases, all with less than 3 hours of downtime</li><li>Set up new load-balanced webmail front end and customized distributed email system serving over 250,000 customers in order to institute server side email filtering, without any disruption to email delivery</li><li>Inventoried entire server infrastructure using open source software creating complete audit of hardware and software on all servers</li><li>Designed server hardware for digital signage distributed enterprise server product</li><li>Set up LTSP environment for the company&#39;s call center, re-using old Pentium III desktop PCs distributed across multiple servers saving the company thousands of dollars on machines for tech agents, and giving complete control over what they can do and access</li><li>Designated &#34;hardware guy&#34; for all equipment, have built and troubleshot hundreds of servers in a completely heterogeneous environment from many different vendors</li><li>Responsible for documenting all completed projects as well as interviewing/training of new admins</li><li>Daily monitoring and support of email systems, distributed hosting environments, and disk/tape backups</li><li>Kept servers patched for vulnerabilities and compliant with TrustKeeper/Trustwave auditing</li><li>Dozens of upgrade/security maintenance windows performed during off hours, usually 2-6am, many times involving coordination with other departments</li></ul>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Technical Support Engineer II</span> —
+<a href="https://www.ingrammicro.com" target="_blank" rel="noopener">Ingram Micro</a>    </div>
+    <div class="entry__meta">Sept. 2006 - Feb. 2009 · Buffalo, NY</div>
+  </div>
+      <ul class="bullets"><li>Pre-sales infrastructure and design consultation with worldwide VAR accounts to design and configure solutions for business needs in the areas of networking, wireless, IP telephony, servers/blades, PCs, fibre channel storage, load balancing, and others</li><li>Post-sales configuration and troubleshooting of Cisco networks including routers, switches/chassis, voice gateways, firewalls, IP Telephony and Unified Communications, as well as Linux software deployments</li><li>Maintenance, configuration, and redesign of a fully functional internal enterprise network for hundreds of users including servers, tape libraries and SAN</li><li>Level 2 technician with responsibility of full knowledge of the supported products including escalations from level 1 technicians</li><li>Training for new technicians, licensing specialists, and re-sellers in person or via WebEx on all areas of technology including networking, systems/servers, storage, and power</li><li>Proactively discovering gaps in knowledge of the team and resolving via team or 1-on-1 training sessions</li><li>Provided feedback in multiple areas of Ingram Micro&#39;s business directly resulting in improvement of business operations, expenses, efficiency, and reliability including in house applications, remotely located servers and networking equipment</li><li>Leader in Ingram Micro&#39;s World Class Tech Support which is renowned worldwide as the best in distribution including consistently being voted</li><li>Leader of the F5 Networks team including off-site training on BIG-IP from F5 in NYC</li><li>Installation and configuration of Windows Active Directory/IIS/Exchange servers</li></ul>
+
+</div><div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">Admin/System Builder/Web Developer</span> —
+<span class="entry__company">Cyber Source</span>    </div>
+    <div class="entry__meta">Jan. 2002 - Sept. 2006 · Buffalo, NY</div>
+  </div>
+      <ul class="bullets"><li>Linux systems administrator including configuration and regular maintenance of production e-mail, web, and backup servers</li><li>Website authoring and maintaining</li><li>Linux desktop installer including configuration of end user ready Linux machines for home or office use including VMware Workstation, Server, and Player</li><li>Configuration and installation of medium-sized office networks including LAN, WAN, and on-site calls</li><li>Building complete systems/servers unsupervised</li><li>Repairing and troubleshooting software and hardware errors of desktops/laptops</li></ul>
+
+</div>  </div>
+  <label for="reveal-earlier-roles" class="reveal__btn">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+    <span class="reveal__label-more">Show 5 earlier roles</span>
+    <span class="reveal__label-less">Show less</span>
+  </label>
+</div>
+</section>
+<section class="section">
+  <h2>Projects</h2>
+    <div class="project">
+  <span class="project__name">webcal-combiner</span>
+  <span class="project__links">
+<a href="https://github.com/jessejoe/webcal-combiner" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Utility to combine multiple webcals into a single calendar</div>
+</div>
+<div class="project">
+  <span class="project__name">vmw-avgo-calculator</span>
+  <span class="project__links">
+<a href="https://vmw-avgo-calculator.streamlit.app/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"/></svg> demo</a><a href="https://github.com/jessejoe/vmw-avgo-calculator" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Streamlit app for calculating values of the VMW/AVGO acquisition related stock</div>
+</div>
+
+    <div class="reveal reveal--list">
+      <input type="checkbox" id="reveal-section-projects" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+        <div class="project">
+  <span class="project__name">wcsd-covid</span>
+  <span class="project__links">
+<a href="https://wcsd-covid.github.io/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"/></svg> demo</a><a href="https://github.com/jessejoe/wcsd-covid" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Script for pulling Covid data from the Williamsville Central School District daily updates and publishing them to public charts using Python for web scraping and Pandas for data analysis</div>
+</div>
+<div class="project">
+  <span class="project__name">boom-client</span>
+  <span class="project__links">
+<a href="https://github.com/jessejoe/boom_client" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Library for controlling the Boom Equalizer software for Mac, reverse engineered from packet captures</div>
+</div>
+<div class="project">
+  <span class="project__name">kisi-python</span>
+  <span class="project__links">
+<a href="https://github.com/jessejoe/kisi-python" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Client and scripts for interacting with the KISI lock API</div>
+</div>
+<div class="project">
+  <span class="project__name">Streaming Album Playlist Maker</span>
+  <span class="project__links">
+<a href="https://github.com/jessejoe/streaming_album_playlist_maker" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.1-1.6-1.1-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.2 0-1.1.4-2 1-2.8-.1-.3-.5-1.4.1-2.9 0 0 .8-.3 2.7 1a9.2 9.2 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.5.2 2.6.1 2.9.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v3c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg> source</a>  </span>
+  <div class="project__desc">Script to create playlists from lists of album names for music services like Spotify</div>
+</div>
+
+      </div>
+      <label for="reveal-section-projects" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 4 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+</section>
+<section class="section">
+  <h2>Open Source Contributions</h2>
+    <div class="contribution">
+  <div>
+    <span class="contribution__name">linux-nfs</span><span class="contribution__badge">C</span>    <div class="contribution__desc">Caching bug in the readdirplus operation in the NFS client of the Linux kernel</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://www.spinics.net/lists/linux-nfs/msg34682.html" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://www.spinics.net/lists/linux-nfs/msg34729.html" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://docs.google.com/document/d/1saQV-yRXCnmLDWrNd2korc-TiAo9eMPf1WwoSej7rJU/edit?usp=sharing" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Jenkins - Pipeline: Job plugin</span><span class="contribution__badge">Java</span>    <div class="contribution__desc">Console for multi-branch pipelines has gotten progressively slower over time</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/jenkinsci/workflow-job-plugin/pull/164#issuecomment-1029380147" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Selenium</span><span class="contribution__badge">Java</span>    <div class="contribution__desc">When a Windows client is killed, Grid nodes can leave sessions/browsers open indefinitely</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/SeleniumHQ/selenium/issues/2332" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a>  </div>
+</div>
+
+    <div class="reveal reveal--list">
+      <input type="checkbox" id="reveal-section-contributions" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+        <div class="contribution">
+  <div>
+    <span class="contribution__name">Appium</span><span class="contribution__badge">JavaScript</span>    <div class="contribution__desc">Can no longer specify browserName with Grid desiredcaps</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/appium/appium/issues/6412" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://github.com/appium/appium-ios-driver/pull/127" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a><a href="https://github.com/appium/appium-android-driver/pull/139" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Twine</span><span class="contribution__badge">Python</span>    <div class="contribution__desc">Print the response content when upload fails</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/pypa/twine/pull/337" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">nginx-proxy</span><span class="contribution__badge">Docker</span>    <div class="contribution__desc">Change dhparam positional args to be inherited vars, standardize naming</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/nginx-proxy/nginx-proxy/pull/1263#issuecomment-478276705" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://github.com/nginx-proxy/nginx-proxy/pull/1263" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Graylog/collector-sidecar</span><span class="contribution__badge">Ruby</span>    <div class="contribution__desc">Specify OS when building packages so they can be built on Mac</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/Graylog2/collector-sidecar/pull/94" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Golang service library</span><span class="contribution__badge">Go</span>    <div class="contribution__desc">SysV init script can lead to multiple processes running</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/kardianos/service/issues/78" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://github.com/kardianos/service/pull/79" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Golang service library</span><span class="contribution__badge">Go</span>    <div class="contribution__desc">Add support for loading environment variables from optional file</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/kardianos/service/pull/80" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">BitBar</span><span class="contribution__badge">Bash</span>    <div class="contribution__desc">Add more advanced VPN status/connection script</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/matryer/bitbar-plugins/pull/388" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Ics.py</span><span class="contribution__badge">Python</span>    <div class="contribution__desc">Improve trigger duration parsing logic</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/C4ptainCrunch/ics.py/pull/148" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Spotipy</span><span class="contribution__badge">Python</span>    <div class="contribution__desc">Add cache_path as a parameter to prompt_for_user_token()</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/plamere/spotipy/issues/167" target="_blank" rel="noopener" title="Bug report"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="7" width="8" height="11" rx="4"/><path d="M12 7V4M9 4l1.5 1.5M15 4l-1.5 1.5M4 10l4 1M4 17l4-1M20 10l-4 1M20 17l-4-1M9 18l-2 3M15 18l2 3"/></svg></a><a href="https://github.com/plamere/spotipy/pull/169" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+<div class="contribution">
+  <div>
+    <span class="contribution__name">Falcon</span><span class="contribution__badge">Python</span>    <div class="contribution__desc">Fix flake8 errors and add additional linting coverage as part of PyCon 2016 Open Source sprints</div>
+  </div>
+  <div class="contribution__links">
+<a href="https://github.com/falconry/falcon/pull/808" target="_blank" rel="noopener" title="Pull Request"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M6 8.2V15.8M18 8.2v5c0 1.5-1 2.8-3 2.8h-3"/></svg></a>  </div>
+</div>
+
+      </div>
+      <label for="reveal-section-contributions" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 10 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+</section>
+<section class="section">
+  <h2>Talks</h2>
+    <div class="talk">
+  <div class="talk__title">Intro to pdb, or: How I Found a Bug in Requests</div>
+<p class="entry__desc">Talk at the local Python Buffalo meetup covering basic debugging using the Python debugger (pdb) without an IDE, as well as some more efficient debugging with the more feature-rich iPython debugger (ipdb). Mixes in a little HTTP troubleshooting to show how a bug was found in the popular Python Requests module.
+</p>  <div class="talk__links">
+<a href="https://www.meetup.com/Python-Buffalo/events/243473519/" target="_blank" rel="noopener">Event</a><a href="https://www.jessejoe.com/other/intro_to_pdb/slides/" target="_blank" rel="noopener">Slides</a>  </div>
+</div>
+
+</section>
+<section class="section">
+  <h2>Volunteering</h2>
+    <div class="volunteer-entry">
+  <div class="entry__head">
+    <div class="volunteer-entry__title">Coach — Amherst Youth Basketball</div>
+    <div class="entry__meta">2019 - Present</div>
+  </div>
+<p class="entry__desc">Coaching youth basketball and teaching teams to work together</p></div>
+
+</section>
+<section class="section">
+  <h2>Recommendations</h2>
+    <div class="recommendation">
+  <p class="recommendation__quote">Jesse has that rare combination of attributes that make him a delight to have on a team. He is a consummate professional and consistently reliable and conscientious; he is highly skilled in a number of technologies and always adding to his tool belt as a continuous learner; AND he is easy going and just a generally very pleasant human being to be around. If given the opportunity I would hire Jesse without hesitation and very much hope we can work together again someday when the stars align for that. You will not regret a decision to hire him. He&#39;s driven and delivers value with whatever he sets his professional mind to accomplishing.
+</p>
+  <div class="recommendation__attribution">Mark Schmitt <span>— Director of SaaS Operations, Brainshark</span></div>
+</div>
+<div class="recommendation">
+  <p class="recommendation__quote">Jesse joined my team at Carbon Black at an early stage of building a complex automation environment. He got up to speed fast and contributed to both implementation and architecture. Jesse is highly regarded by his teammates and is a great addition to any team. Our automation framework needed to run in a highly secure environment and Jesse was part of the team that made it happen. I highly recommend Jesse, he will elevate any team&#39;s technical ability.
+</p>
+  <div class="recommendation__attribution">Issam Gharios <span>— VP of Software, HighRes Biosolutions</span></div>
+</div>
+
+    <div class="reveal reveal--list">
+      <input type="checkbox" id="reveal-section-recommendations" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+        <div class="recommendation">
+  <p class="recommendation__quote">I was the first engineer to interview Jesse when he applied for a role at Carbon Black. After speaking with him, I told my manager &#34;You must hire this guy&#34; and we did. As it turned out, Jesse was even better than I had expected. Jesse is meticulous and hard working but also collaborative and friendly. I could distill this down to one word, he&#39;s solid. He is an exceptional engineer and one of the best Python developers I&#39;ve ever worked with. I would happily work with Jesse again, in any capacity.
+</p>
+  <div class="recommendation__attribution">Matt Cummings <span>— Staff Engineer, Panther Labs</span></div>
+</div>
+<div class="recommendation">
+  <p class="recommendation__quote">Jesse is one of the most talented and passionate engineers I have come across throughout my career. His ability to quickly debug and troubleshoot problems, architect elegant solutions, and patiently mentor his peers makes Jesse a rare gem in the field. I haven&#39;t worked with him for a few years now, but we still keep in touch and share new ideas and things we&#39;ve learned along the way. I wouldn&#39;t hesitate to work with Jesse again, and have certainly tried a number of times to no avail!
+</p>
+  <div class="recommendation__attribution">Dave Garbus <span>— SRE/DevOps Consultant</span></div>
+</div>
+<div class="recommendation">
+  <p class="recommendation__quote">Jesse is an essential piece of any team he is on. He is excellent at providing direction, feedback, and work quality. Some of my favorite interactions with Jesse were through the code review process, and utilizing that to help grow a culture of quality reviews, and using those reviews as a great learning opportunity. Aside from that, Jesse has great insight on direction and focus for products and roadmaps. Easily one of my favorite coworkers to date.
+</p>
+  <div class="recommendation__attribution">Ray Williams <span>— ScrumMaster, Red Hat</span></div>
+</div>
+<div class="recommendation">
+  <p class="recommendation__quote">It is always a pleasure to work with Jesse on any project. I&#39;ve been fortunate enough to have worked with him in two different companies. He has a wide breadth and depth of knowledge around Python, test automation, system administration, vSphere, and many others. He is usually the first person I go to for a review of my code, as he will suggest and guide anyone who asks to get the best code possible merged.
+</p>
+  <div class="recommendation__attribution">Joshua Moravec <span>— SDET, Meta</span></div>
+</div>
+
+      </div>
+      <label for="reveal-section-recommendations" class="reveal__btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+        <span class="reveal__label-more">Show 4 more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+</section>
+      </div>
+      <div class="col-side">
+<section class="section">
+  <h2>Skills</h2>
+    <div class="skill-group">
+  <div class="skill-group__name">Languages</div>
+  <div class="skill-item"><span>Python</span><span class="skill-item__level">Advanced</span></div>
+  <div class="skill-item"><span>Bash</span><span class="skill-item__level">Advanced</span></div>
+  <div class="skill-item"><span>PowerShell</span><span class="skill-item__level">Advanced</span></div>
+  <div class="skill-item"><span>HTML5 / CSS</span><span class="skill-item__level">Intermediate</span></div>
+  <div class="skill-item"><span>PHP / Perl / Java</span><span class="skill-item__level">Basic</span></div>
+  <div class="skill-item"><span>JavaScript</span><span class="skill-item__level">Basic</span></div>
+  <div class="skill-item"><span>Ruby</span><span class="skill-item__level">Basic</span></div>
+</div>
+<div class="skill-group">
+  <div class="skill-group__name">Systems Administration</div>
+  <div class="skill-item"><span>Linux</span><span class="skill-item__level">Advanced</span></div>
+  <div class="skill-item"><span>Windows</span><span class="skill-item__level">Experienced</span></div>
+  <div class="skill-item"><span>macOS</span><span class="skill-item__level">Experienced</span></div>
+</div>
+<div class="skill-group">
+  <div class="skill-group__name">Infrastructure &amp; DevOps</div>
+  <div class="skill-item"><span>Varnish Cache (HTTP accelerator)</span></div>
+  <div class="skill-item"><span>AWS (EC2, S3, Lambda, etc.)</span></div>
+  <div class="skill-item"><span>Containerization/Orchestration (Docker, Kubernetes, Tanzu/TKG)</span></div>
+  <div class="skill-item"><span>CI/CD (Jenkins, TeamCity, GitLab CI, Travis CI)</span></div>
+  <div class="skill-item"><span>Configuration Management (Puppet, Chef, Ansible, Salt)</span></div>
+  <div class="skill-item"><span>Virtualization (VMware vCenter/ESXi, Hyper-V, Xen, VirtualBox)</span></div>
+  <div class="skill-item"><span>Web Servers (Apache, NGINX)</span></div>
+  <div class="skill-item"><span>Graylog / ELK (Elasticsearch, Logstash, Kibana)</span></div>
+  <div class="skill-item"><span>Storage Networking (SAN, NFS, SMB, NAS)</span></div>
+  <div class="skill-item"><span>Git / GitHub / GitLab</span></div>
+</div>
+<div class="skill-group">
+  <div class="skill-group__name">Testing &amp; Quality</div>
+  <div class="skill-item"><span>Automated testing (unit, integration, end-to-end)</span></div>
+  <div class="skill-item"><span>JMeter load testing</span></div>
+</div>
+<div class="skill-group">
+  <div class="skill-group__name">Other</div>
+  <div class="skill-item"><span>Networking &amp; packet analysis (tcpdump, Wireshark, firewalls)</span></div>
+  <div class="skill-item"><span>Building servers/hardware, consumer to enterprise</span></div>
+  <div class="skill-item"><span>Agile methodologies (Scrum, Kanban)</span></div>
+  <div class="skill-item"><span>Mail servers (Sendmail, Postfix, qmail)</span></div>
+  <div class="skill-item"><span>MySQL, PostgreSQL</span></div>
+</div>
+
+</section>
+<section class="section">
+  <h2>Education</h2>
+    <div class="simple-entry">
+  <div class="simple-entry__title">ITT Technical Institute</div>
+  <div class="simple-entry__meta">Associate of Occupational Studies, Information Technology - Computer Network Systems · 2004 - 2006</div>
+</div>
+
+</section>
+<section class="section">
+  <h2>Certifications &amp; Training</h2>
+    <div class="simple-entry">
+  <div class="simple-entry__title">CCNA - Cisco Certified Network Associate</div>
+  <div class="simple-entry__meta">Cisco</div>
+</div>
+<div class="simple-entry">
+  <div class="simple-entry__title">Security Engineering on AWS training</div>
+  <div class="simple-entry__meta">AWS</div>
+</div>
+<div class="simple-entry">
+  <div class="simple-entry__title">Architecting on AWS training</div>
+  <div class="simple-entry__meta">AWS</div>
+</div>
+
+</section>
+      </div>
+    </div>
+<footer class="footer">
+  <span>Updated 2026-09-24</span>
+  <span class="footer__pdf-links">
+<a href="JesseJarzynkaResume.pdf" target="_blank" rel="noopener">Full PDF</a><a href="JesseJarzynkaResumeSummary.pdf" target="_blank" rel="noopener">Highlights PDF</a>  </span>
+</footer>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme-toggle");
+      var root = document.documentElement;
+      var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function currentTheme() {
+        return root.getAttribute("data-theme") || (media.matches ? "dark" : "light");
+      }
+
+      btn.addEventListener("click", function () {
+        var next = currentTheme() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>
