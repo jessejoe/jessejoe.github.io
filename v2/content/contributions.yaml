@@ -1,0 +1,86 @@
+# `lang` renders as a small language/tech badge; `links[].type` is "bug" or "pr"
+# and picks the icon (no more hand-embedded <i> markup like the old JSON).
+- name: linux-nfs
+  lang: C
+  description: Caching bug in the readdirplus operation in the NFS client of the Linux kernel
+  links:
+    - {type: bug, url: "https://www.spinics.net/lists/linux-nfs/msg34682.html"}
+    - {type: bug, url: "https://www.spinics.net/lists/linux-nfs/msg34729.html"}
+    - {type: bug, url: "https://docs.google.com/document/d/1saQV-yRXCnmLDWrNd2korc-TiAo9eMPf1WwoSej7rJU/edit?usp=sharing"}
+
+- name: "Jenkins - Pipeline: Job plugin"
+  lang: Java
+  description: Console for multi-branch pipelines has gotten progressively slower over time
+  links:
+    - {type: bug, url: "https://github.com/jenkinsci/workflow-job-plugin/pull/164#issuecomment-1029380147"}
+
+- name: Selenium
+  lang: Java
+  description: When a Windows client is killed, Grid nodes can leave sessions/browsers open indefinitely
+  links:
+    - {type: bug, url: "https://github.com/SeleniumHQ/selenium/issues/2332"}
+
+- name: Appium
+  lang: JavaScript
+  description: Can no longer specify browserName with Grid desiredcaps
+  links:
+    - {type: bug, url: "https://github.com/appium/appium/issues/6412"}
+    - {type: pr, url: "https://github.com/appium/appium-ios-driver/pull/127"}
+    - {type: pr, url: "https://github.com/appium/appium-android-driver/pull/139"}
+
+- name: Twine
+  lang: Python
+  description: Print the response content when upload fails
+  links:
+    - {type: pr, url: "https://github.com/pypa/twine/pull/337"}
+
+- name: nginx-proxy
+  lang: Docker
+  description: Change dhparam positional args to be inherited vars, standardize naming
+  links:
+    - {type: bug, url: "https://github.com/nginx-proxy/nginx-proxy/pull/1263#issuecomment-478276705"}
+    - {type: pr, url: "https://github.com/nginx-proxy/nginx-proxy/pull/1263"}
+
+- name: Graylog/collector-sidecar
+  lang: Ruby
+  description: Specify OS when building packages so they can be built on Mac
+  links:
+    - {type: pr, url: "https://github.com/Graylog2/collector-sidecar/pull/94"}
+
+- name: Golang service library
+  lang: Go
+  description: SysV init script can lead to multiple processes running
+  links:
+    - {type: bug, url: "https://github.com/kardianos/service/issues/78"}
+    - {type: pr, url: "https://github.com/kardianos/service/pull/79"}
+
+- name: Golang service library
+  lang: Go
+  description: Add support for loading environment variables from optional file
+  links:
+    - {type: pr, url: "https://github.com/kardianos/service/pull/80"}
+
+- name: BitBar
+  lang: Bash
+  description: Add more advanced VPN status/connection script
+  links:
+    - {type: pr, url: "https://github.com/matryer/bitbar-plugins/pull/388"}
+
+- name: Ics.py
+  lang: Python
+  description: Improve trigger duration parsing logic
+  links:
+    - {type: pr, url: "https://github.com/C4ptainCrunch/ics.py/pull/148"}
+
+- name: Spotipy
+  lang: Python
+  description: Add cache_path as a parameter to prompt_for_user_token()
+  links:
+    - {type: bug, url: "https://github.com/plamere/spotipy/issues/167"}
+    - {type: pr, url: "https://github.com/plamere/spotipy/pull/169"}
+
+- name: Falcon
+  lang: Python
+  description: Fix flake8 errors and add additional linting coverage as part of PyCon 2016 Open Source sprints
+  links:
+    - {type: pr, url: "https://github.com/falconry/falcon/pull/808"}

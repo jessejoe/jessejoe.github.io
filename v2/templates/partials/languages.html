@@ -1,0 +1,5 @@
+{% macro render(items, pdf=False) %}
+{% for l in items %}
+<div class="simple-entry"><span class="simple-entry__title">{{ l.name }}</span>{% if l.level %} <span class="simple-entry__meta">— {{ l.level }}</span>{% endif %}</div>
+{% endfor %}
+{% endmacro %}

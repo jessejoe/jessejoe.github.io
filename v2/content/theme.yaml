@@ -1,0 +1,22 @@
+# Resolved CSS colors (no more 150-entry color-name lookup table -- just the 4 colors
+# that are actually used, as real hex values you can tweak directly).
+headings: "#3B5B7C"     # steel blue, section headings / name
+accent: "#B4884D"       # warm bronze accent for rules, icons, tags
+subheadings: "#5B6B7A"  # slate gray, role/company subtext
+body_text: "#242B33"
+muted_text: "#6B7684"
+background: "#FFFFFF"
+panel_background: "#F4F6F8"
+
+# Dark-mode equivalents (website only -- PDFs always render with the light
+# palette above, print isn't dark-mode-aware). Applied when the visitor's OS
+# prefers dark and they haven't overridden it, or when they've explicitly
+# toggled dark mode with the button in the corner of the page.
+dark:
+  headings: "#8FB4DE"
+  accent: "#D9A868"
+  subheadings: "#A6B0BC"
+  body_text: "#E7E9EC"
+  muted_text: "#8B94A0"
+  background: "#14171B"
+  panel_background: "#1F242B"

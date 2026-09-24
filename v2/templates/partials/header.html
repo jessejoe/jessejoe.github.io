@@ -1,0 +1,40 @@
+{% from "partials/icons.html" import icon %}
+{% set contacts = [] %}
+{% if personal_info.mail %}{% do contacts.append({"icon": "mail", "href": "mailto:" ~ personal_info.mail, "text": personal_info.mail, "external": False}) %}{% endif %}
+{% if personal_info.phone %}{% do contacts.append({"icon": "phone", "href": "tel:" ~ personal_info.phone, "text": personal_info.phone, "external": False}) %}{% endif %}
+{% if personal_info.address %}{% do contacts.append({"icon": "location", "href": personal_info.address.url, "text": personal_info.address.title, "external": True}) %}{% endif %}
+{% if personal_info.personal_site %}{% do contacts.append({"icon": "globe", "href": personal_info.personal_site.url, "text": personal_info.personal_site.title, "external": True}) %}{% endif %}
+{% for g in personal_info.github %}{% do contacts.append({"icon": "github", "href": g.url, "text": g.title, "external": True}) %}{% endfor %}
+{% if personal_info.stackoverflow %}{% do contacts.append({"icon": "stackoverflow", "href": personal_info.stackoverflow.url, "text": personal_info.stackoverflow.title, "external": True}) %}{% endif %}
+
+<header class="header">
+  {% if personal_info.photo %}
+  <img class="header__photo" src="{{ personal_info.photo }}" alt="{{ personal_info.name }}">
+  {% endif %}
+  <div>
+    <h1 class="header__name">{{ personal_info.name }}</h1>
+    <div class="header__profession">{{ personal_info.profession }}</div>
+    {% if personal_info.summary %}<p class="header__summary">{{ personal_info.summary }}</p>{% endif %}
+    {% if pdf %}
+    {#
+      A plain flex/inline-block row wraps ragged-width items onto uneven
+      lines (and can wrap a single item's own text mid-phrase). A fixed
+      2-column table keeps every row's items aligned and gives each cell
+      enough width that its text never has to wrap.
+    #}
+    <table class="contact-table">
+      {% for row in contacts | batch(2) %}
+      <tr>
+        {% for c in row %}
+        <td><a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %}>{{ icon(c.icon, pdf) }}{{ c.text }}</a></td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <div class="contact-list">
+      {% for c in contacts %}<a href="{{ c.href }}"{% if c.external %} target="_blank" rel="noopener"{% endif %}>{{ icon(c.icon, pdf) }}{{ c.text }}</a>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>

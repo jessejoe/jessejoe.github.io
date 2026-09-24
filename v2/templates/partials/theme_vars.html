@@ -1,0 +1,40 @@
+<style>
+:root {
+  --heading: {{ theme.headings }};
+  --accent: {{ theme.accent }};
+  --subheadings: {{ theme.subheadings }};
+  --body-text: {{ theme.body_text }};
+  --muted-text: {{ theme.muted_text }};
+  --background: {{ theme.background }};
+  --panel-background: {{ theme.panel_background }};
+  color-scheme: light;
+}
+{% if not pdf and theme.dark %}
+{# Applies when the OS prefers dark and the visitor hasn't explicitly picked
+   light via the toggle. #}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --heading: {{ theme.dark.headings }};
+    --accent: {{ theme.dark.accent }};
+    --subheadings: {{ theme.dark.subheadings }};
+    --body-text: {{ theme.dark.body_text }};
+    --muted-text: {{ theme.dark.muted_text }};
+    --background: {{ theme.dark.background }};
+    --panel-background: {{ theme.dark.panel_background }};
+    color-scheme: dark;
+  }
+}
+{# Applies when the visitor has explicitly picked dark via the toggle,
+   regardless of OS preference. #}
+:root[data-theme="dark"] {
+  --heading: {{ theme.dark.headings }};
+  --accent: {{ theme.dark.accent }};
+  --subheadings: {{ theme.dark.subheadings }};
+  --body-text: {{ theme.dark.body_text }};
+  --muted-text: {{ theme.dark.muted_text }};
+  --background: {{ theme.dark.background }};
+  --panel-background: {{ theme.dark.panel_background }};
+  color-scheme: dark;
+}
+{% endif %}
+</style>

@@ -1,0 +1,30 @@
+{% from "partials/icons.html" import icon %}
+{% if sec.partial == "experience.html" %}
+<section class="section">
+  <h2>{{ sec.title }}</h2>
+  {% include "partials/experience.html" %}
+</section>
+{% else %}
+  {% import "partials/" ~ sec.partial as mod %}
+  {% set items = content[sec.section] %}
+  {% set n = 0 if pdf else (sec.preview_count | default(0)) %}
+<section class="section">
+  <h2>{{ sec.title }}</h2>
+  {% if n > 0 and items | length > n %}
+    {{ mod.render(items[:n], pdf) }}
+    <div class="reveal reveal--list">
+      <input type="checkbox" id="reveal-section-{{ sec.section }}" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+        {{ mod.render(items[n:], pdf) }}
+      </div>
+      <label for="reveal-section-{{ sec.section }}" class="reveal__btn">
+        {{ icon("chevron") }}
+        <span class="reveal__label-more">Show {{ items | length - n }} more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+  {% else %}
+    {{ mod.render(items, pdf) }}
+  {% endif %}
+</section>
+{% endif %}

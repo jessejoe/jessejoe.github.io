@@ -1,0 +1,8 @@
+{% macro render(items, pdf=False) %}
+{% for r in items %}
+<div class="recommendation">
+  <p class="recommendation__quote">{{ r.description }}</p>
+  <div class="recommendation__attribution">{{ r.name }} <span>— {{ r.role }}</span></div>
+</div>
+{% endfor %}
+{% endmacro %}

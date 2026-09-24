@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Runs before the stylesheet paints anything, so an explicit saved
+       preference applies immediately -- no flash of the wrong theme. If
+       nothing is saved, this does nothing and the prefers-color-scheme
+       media query in theme_vars.html handles the OS default. */
+    try {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    } catch (e) {}
+  </script>
+  <title>{{ personal_info.name }} — {{ personal_info.profession }}</title>
+  {% if personal_info.summary %}<meta name="description" content="{{ personal_info.summary }}">{% endif %}
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="icon" type="image/x-icon" href="{{ asset_prefix }}img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset_prefix }}img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset_prefix }}img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset_prefix }}img/apple-touch-icon.png">
+  <link rel="manifest" href="{{ asset_prefix }}img/site.webmanifest">
+  <link rel="stylesheet" href="{{ asset_prefix }}css/style.css">
+  {% include "partials/theme_vars.html" %}
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
+    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2.5 12H5M19 12h2.5M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  </button>
+  <div class="page">
+    {% include "partials/header.html" %}
+    <div class="layout">
+      <div class="col-main">
+        {% for sec in sections if sec.column == "main" and content.get(sec.section) %}
+          {% include "partials/section_wrapper.html" %}
+        {% endfor %}
+      </div>
+      <div class="col-side">
+        {% for sec in sections if sec.column == "side" and content.get(sec.section) %}
+          {% include "partials/section_wrapper.html" %}
+        {% endfor %}
+      </div>
+    </div>
+    {% include "partials/footer.html" %}
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById("theme-toggle");
+      var root = document.documentElement;
+      var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function currentTheme() {
+        return root.getAttribute("data-theme") || (media.matches ? "dark" : "light");
+      }
+
+      btn.addEventListener("click", function () {
+        var next = currentTheme() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

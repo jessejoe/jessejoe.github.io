@@ -1,0 +1,13 @@
+{% from "partials/macros.html" import render_bullets %}
+{% set flatten_bullets = pdf or (entry.tier != "highlight") %}
+<div class="entry">
+  <div class="entry__head">
+    <div class="entry__title">
+      <span class="entry__role">{{ entry.role }}</span> —
+      {% if entry.link %}<a href="{{ entry.link }}" target="_blank" rel="noopener">{{ entry.company }}</a>{% else %}<span class="entry__company">{{ entry.company }}</span>{% endif %}
+    </div>
+    <div class="entry__meta">{{ entry.date }}{% if entry.location %} · {{ entry.location }}{% endif %}</div>
+  </div>
+  {% if entry.description %}<p class="entry__desc">{{ entry.description }}</p>{% endif %}
+  {{ render_bullets(entry.description_bullets, pdf, flatten_bullets, "reveal-bullets-" ~ entry.id) }}
+</div>

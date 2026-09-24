@@ -1,0 +1,28 @@
+{% from "partials/icons.html" import icon %}
+
+{% macro render_bullets(bullets, pdf, flatten=False, reveal_id="") %}
+  {% if pdf or flatten %}
+    {% if bullets %}
+    <ul class="bullets">{% for b in bullets %}<li>{{ b.text }}</li>{% endfor %}</ul>
+    {% endif %}
+  {% else %}
+    {% set highlights = bullets | selectattr("tier", "equalto", "highlight") | list %}
+    {% set standard = bullets | selectattr("tier", "equalto", "standard") | list %}
+    {% if highlights %}
+    <ul class="bullets">{% for b in highlights %}<li>{{ b.text }}</li>{% endfor %}</ul>
+    {% endif %}
+    {% if standard %}
+    <div class="reveal reveal--bullets">
+      <input type="checkbox" id="{{ reveal_id }}" class="reveal__checkbox">
+      <div class="reveal__peek" style="--reveal-collapsed-height: 1.55em;">
+        <ul class="bullets">{% for b in standard %}<li>{{ b.text }}</li>{% endfor %}</ul>
+      </div>
+      <label for="{{ reveal_id }}" class="reveal__btn">
+        {{ icon("chevron") }}
+        <span class="reveal__label-more">Show {{ standard | length }} more</span>
+        <span class="reveal__label-less">Show less</span>
+      </label>
+    </div>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

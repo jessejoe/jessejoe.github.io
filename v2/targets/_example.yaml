@@ -1,0 +1,24 @@
+# Example tailored target. Copy this file to e.g. targets/acme-corp.yaml and edit,
+# then build it with: python build.py --target=acme-corp
+#
+# Two independent filters apply, in order:
+#   1) relevance filtering below (tags/ids/order/overrides)
+#   2) tier filtering by mode: with `mode` set below, only that one PDF variant is
+#      built; omit `mode` to build both full and summary PDFs, same as the base
+#      site's default. `--mode` on the command line overrides either way.
+
+name: "Acme Corp - Platform Engineer"
+output_slug: acme-corp     # -> dist/acme-corp/index.html + dist/acme-corp/*.pdf
+mode: summary               # full | summary | omit to build both
+
+personal_info_overrides:
+  profession: "Platform / Infrastructure Engineer"
+  # summary: "Optional override of the top summary paragraph for this target."
+
+sections:
+  experiences:
+    include_tags: [sre-devops, infrastructure, leadership]   # omit to include all entries
+    # exclude_ids: [cyber-source-admin]                       # match by "<company>-<role>" slug
+    # order: [disney-streaming-lead-software-engineer]        # explicit reorder; rest appended after
+  projects:
+    exclude_all: true

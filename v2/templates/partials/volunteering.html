@@ -1,0 +1,11 @@
+{% macro render(items, pdf=False) %}
+{% for entry in items %}
+<div class="volunteer-entry">
+  <div class="entry__head">
+    <div class="volunteer-entry__title">{{ entry.role }} — {{ entry.organization }}</div>
+    <div class="entry__meta">{{ entry.date }}</div>
+  </div>
+  {% if entry.description %}<p class="entry__desc">{{ entry.description }}</p>{% endif %}
+</div>
+{% endfor %}
+{% endmacro %}

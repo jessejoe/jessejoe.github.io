@@ -1,0 +1,9 @@
+{% macro render(items, pdf=False) %}
+{% for c in items %}
+<div class="simple-entry">
+  <div class="simple-entry__title">{{ c.title }}</div>
+  <div class="simple-entry__meta">{{ c.authority }}{% if c.date %} · {{ c.date }}{% endif %}</div>
+  {% if c.description %}<div class="simple-entry__desc">{{ c.description | safe }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endmacro %}

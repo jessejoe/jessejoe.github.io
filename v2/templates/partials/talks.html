@@ -1,0 +1,12 @@
+{% macro render(items, pdf=False) %}
+{% for t in items %}
+<div class="talk">
+  <div class="talk__title">{{ t.title }}</div>
+  {% if t.description %}<p class="entry__desc">{{ t.description }}</p>{% endif %}
+  <div class="talk__links">
+    {% if t.url %}<a href="{{ t.url }}" target="_blank" rel="noopener">Event</a>{% endif %}
+    {% if t.slides %}<a href="{{ t.slides }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}

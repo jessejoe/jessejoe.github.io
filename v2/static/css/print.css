@@ -1,0 +1,124 @@
+@page {
+  size: Letter;
+  margin: 0.55in 0.65in;
+}
+
+body { font-size: 10.3pt; }
+
+.page { max-width: none; padding: 0; }
+
+.header { margin-bottom: 1.1rem; padding-bottom: 1rem; }
+.header__photo { width: 76px; height: 76px; }
+.header__name { font-size: 1.5rem; }
+
+/* WeasyPrint has a link-annotation bug: an <a> that is a DIRECT child of a
+   `display: flex` container loses its PDF link annotation entirely -- this
+   reproduces even with a bare flex div wrapping two plain-text anchors, no
+   icons or nesting involved. table/td and inline-block are both safe (a
+   table cell and a non-flex box are never a "flex parent"), so the print
+   header uses a fixed 2-column <table> instead of the web's flex row (see
+   the `pdf` branch in header.html) -- that also fixes the ragged wrapping a
+   plain inline-block row gave every contact item a different width and let
+   individual items wrap mid-phrase. .contribution__links needs the same
+   non-flex treatment for the same reason.
+   Separately, WeasyPrint also drops the link annotation for the first of
+   several same-page <a> elements that contain an inline <svg> -- icons in
+   print are therefore rendered as a CSS background-image on a <span>
+   instead (see icons.html / render.py's icon_data_uri), which isn't a
+   "replaced element" in the same way and doesn't trigger it. */
+.contact-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.contact-table td {
+  padding: 0.18rem 0;
+  width: 50%;
+}
+.contact-table a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.contact-table .icon {
+  vertical-align: middle;
+  margin-right: 0.15rem;
+}
+
+.contribution__links {
+  /* NOT flex/inline-flex: its direct children are <a> tags, and a flex
+     PARENT of an <a> is exactly the broken pattern described above. */
+  display: inline-block;
+}
+.contribution__links a {
+  display: inline-block;
+  margin-left: 0.35rem;
+}
+.contribution__links .icon {
+  vertical-align: middle;
+}
+
+/* Single-column flow for print: WeasyPrint's CSS Grid pagination leaves huge
+   gaps (one section per page), so the print template skips .layout/.col-*
+   entirely rather than fighting it -- see templates/print.html. */
+/* NOT break-inside: avoid-page here -- sections like Experience are routinely
+   taller than one page, and forcing them to avoid breaking just pushes the
+   whole section onto a fresh page, leaving the previous page mostly blank.
+   Only the small atomic blocks below need break-inside protection. */
+.section { margin-bottom: 1.15rem; }
+.section > h2 { break-after: avoid-page; margin-bottom: 0.6rem; }
+
+/* Same reasoning as .section above: .entry (a job) can run to a dozen
+   bullets and easily exceeds a full page, so it must NOT be break-inside:
+   avoid -- that just pushes the whole entry (and everything after it) to a
+   fresh page, repeating the huge-blank-page problem one level down. Instead
+   let entries/bullet lists flow across the page break, and only protect the
+   small pieces that actually look bad split: don't orphan a role/company
+   header from its content, and don't split a single bullet's text mid-line. */
+.entry__head { break-after: avoid-page; }
+.bullets li { break-inside: avoid-page; }
+
+/* These stay atomic -- they're short (a line or two to a handful of lines)
+   and always fit, so there's no whitespace cost to keeping them intact. */
+.simple-entry, .project, .contribution, .recommendation, .talk, .volunteer-entry, .skill-group {
+  break-inside: avoid-page;
+}
+
+.entry { margin-bottom: 0.85rem; }
+.bullets li { margin-bottom: 0.2rem; }
+
+/* Skills has no links, so unlike the header/contributions fixes above this
+   is just a plain layout choice: the web's one-name-per-row block (with the
+   level right-aligned via space-between) wastes most of a print page's
+   width on a two- or three-word line. Print instead flows each group as
+   inline, comma-separated text -- "Python (Advanced), Bash (Advanced), ..."
+   -- wrapping to fill the full line. */
+.skill-group { margin-bottom: 0.55rem; }
+.skill-item {
+  display: inline;
+  padding: 0;
+}
+.skill-item:not(:last-child)::after { content: ", "; }
+.skill-item__level::before { content: " ("; }
+.skill-item__level::after { content: ")"; }
+
+.footer { display: none; }
+
+.pdf-note {
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--panel-background);
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  break-inside: avoid-page;
+}
+.pdf-note a { color: var(--heading); font-weight: 600; }
+
+/* no reveal/overflow affordances exist in the PDF build (content is fully
+   pre-filtered in Python before rendering -- see cli.py/render.py), but keep
+   this as a safety net */
+.reveal__checkbox, .reveal__btn { display: none; }
+.reveal__peek { max-height: none !important; }
+.reveal__peek::after { display: none; }

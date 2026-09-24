@@ -1,0 +1,14 @@
+{% from "partials/icons.html" import icon %}
+{% macro render(items, pdf=False) %}
+{% for c in items %}
+<div class="contribution">
+  <div>
+    <span class="contribution__name">{{ c.name }}</span>{% if c.lang %}<span class="contribution__badge">{{ c.lang }}</span>{% endif %}
+    <div class="contribution__desc">{{ c.description }}</div>
+  </div>
+  <div class="contribution__links">
+    {% for l in c.links %}<a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ 'Pull Request' if l.type == 'pr' else 'Bug report' }}">{{ icon('pr' if l.type == 'pr' else 'bug', pdf) }}</a>{% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}

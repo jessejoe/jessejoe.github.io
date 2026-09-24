@@ -1,0 +1,24 @@
+{% from "partials/icons.html" import icon %}
+{% set highlight_entries = experiences | selectattr("tier", "equalto", "highlight") | list %}
+{% set standard_entries = experiences | selectattr("tier", "equalto", "standard") | list %}
+{% set shown_entries = experiences if pdf else highlight_entries %}
+
+{% for entry in shown_entries %}
+  {% include "partials/_experience_entry.html" %}
+{% endfor %}
+
+{% if not pdf and standard_entries %}
+<div class="reveal reveal--entries">
+  <input type="checkbox" id="reveal-earlier-roles" class="reveal__checkbox">
+  <div class="reveal__peek" style="--reveal-collapsed-height: 3.6em;">
+    {% for entry in standard_entries %}
+      {% include "partials/_experience_entry.html" %}
+    {% endfor %}
+  </div>
+  <label for="reveal-earlier-roles" class="reveal__btn">
+    {{ icon("chevron") }}
+    <span class="reveal__label-more">Show {{ standard_entries | length }} earlier role{{ "s" if standard_entries | length != 1 else "" }}</span>
+    <span class="reveal__label-less">Show less</span>
+  </label>
+</div>
+{% endif %}

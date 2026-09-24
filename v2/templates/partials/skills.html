@@ -1,0 +1,10 @@
+{% macro render(items, pdf=False) %}
+{% for group in items %}
+<div class="skill-group">
+  <div class="skill-group__name">{{ group.category }}</div>
+  {% for item in group.skills %}
+  <div class="skill-item"><span>{{ item.name }}</span>{% if item.level %}<span class="skill-item__level">{{ item.level }}</span>{% endif %}</div>
+  {% endfor %}
+</div>
+{% endfor %}
+{% endmacro %}

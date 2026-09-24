@@ -1,0 +1,41 @@
+- category: Languages
+  skills:
+    - {name: Python, level: Advanced}
+    - {name: Bash, level: Advanced}
+    - {name: PowerShell, level: Advanced}
+    - {name: HTML5 / CSS, level: Intermediate}
+    - {name: PHP / Perl / Java, level: Basic}
+    - {name: JavaScript, level: Basic}
+    - {name: Ruby, level: Basic}
+
+- category: Systems Administration
+  skills:
+    - {name: Linux, level: Advanced}
+    - {name: Windows, level: Experienced}
+    - {name: macOS, level: Experienced}
+
+- category: Infrastructure & DevOps
+  skills:
+    - {name: "Varnish Cache (HTTP accelerator)"}
+    - {name: "AWS (EC2, S3, Lambda, etc.)"}
+    - {name: "Containerization/Orchestration (Docker, Kubernetes, Tanzu/TKG)"}
+    - {name: "CI/CD (Jenkins, TeamCity, GitLab CI, Travis CI)"}
+    - {name: "Configuration Management (Puppet, Chef, Ansible, Salt)"}
+    - {name: "Virtualization (VMware vCenter/ESXi, Hyper-V, Xen, VirtualBox)"}
+    - {name: "Web Servers (Apache, NGINX)"}
+    - {name: "Graylog / ELK (Elasticsearch, Logstash, Kibana)"}
+    - {name: "Storage Networking (SAN, NFS, SMB, NAS)"}
+    - {name: "Git / GitHub / GitLab"}
+
+- category: Testing & Quality
+  skills:
+    - {name: "Automated testing (unit, integration, end-to-end)"}
+    - {name: "JMeter load testing"}
+
+- category: Other
+  skills:
+    - {name: "Networking & packet analysis (tcpdump, Wireshark, firewalls)"}
+    - {name: "Building servers/hardware, consumer to enterprise"}
+    - {name: "Agile methodologies (Scrum, Kanban)"}
+    - {name: "Mail servers (Sendmail, Postfix, qmail)"}
+    - {name: "MySQL, PostgreSQL"}

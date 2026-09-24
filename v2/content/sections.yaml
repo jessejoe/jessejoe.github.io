@@ -1,0 +1,69 @@
+# Section order/placement, replacing what used to be hardcoded in index.html.
+# column: main | side
+# summary: whether this section appears at all in --mode=summary PDF/target builds
+#          (Python-side filtering only -- see filtering.py). On the website, every
+#          section always shows at least `preview_count` items regardless of this flag.
+# preview_count: how many items show by default on the website before the rest are
+#          tucked behind a fading "show more" reveal. 0/omitted = always show all
+#          (used for Experience, which does its own highlight/standard tiering, and
+#          for the always-short sidebar sections).
+- section: experiences
+  title: Experience
+  partial: experience.html
+  column: main
+  summary: true
+- section: projects
+  title: Projects
+  partial: projects.html
+  column: main
+  summary: false
+  preview_count: 2
+- section: contributions
+  title: Open Source Contributions
+  partial: contributions.html
+  column: main
+  summary: false
+  preview_count: 3
+- section: talks
+  title: Talks
+  partial: talks.html
+  column: main
+  summary: false
+  preview_count: 2
+- section: volunteering_experiences
+  title: Volunteering
+  partial: volunteering.html
+  column: main
+  summary: false
+  preview_count: 2
+- section: recommendations
+  title: Recommendations
+  partial: recommendations.html
+  column: main
+  summary: false
+  preview_count: 2
+- section: skills
+  title: Skills
+  partial: skills.html
+  column: side
+  summary: true
+- section: education
+  title: Education
+  partial: education.html
+  column: side
+  summary: true
+- section: certificates
+  title: Certifications & Training
+  partial: certificates.html
+  column: side
+  summary: true
+- section: languages
+  title: Languages
+  partial: languages.html
+  column: side
+  summary: true
+- section: honors
+  title: Honors
+  partial: honors.html
+  column: side
+  summary: false

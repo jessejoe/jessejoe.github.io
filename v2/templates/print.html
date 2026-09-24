@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ personal_info.name }} — {{ personal_info.profession }}</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  {% include "partials/theme_vars.html" %}
+</head>
+<body>
+  <div class="page page--print">
+    {% include "partials/header.html" %}
+    {% for sec in sections if content.get(sec.section) %}
+      {% include "partials/section_wrapper.html" %}
+    {% endfor %}
+    {% if mode == "summary" and personal_info.personal_site %}
+    <p class="pdf-note">
+      This is a condensed summary — earlier roles are shown without full detail, and
+      projects, open-source contributions, talks, and recommendations are omitted.
+      For the complete résumé, see
+      <a href="{{ personal_info.personal_site.url }}" target="_blank" rel="noopener">{{ personal_info.personal_site.title }}</a>.
+    </p>
+    {% endif %}
+  </div>
+</body>
+</html>

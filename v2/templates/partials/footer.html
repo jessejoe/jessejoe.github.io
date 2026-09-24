@@ -1,0 +1,10 @@
+{% if not pdf %}
+<footer class="footer">
+  <span>Updated {{ build_date }}</span>
+  {% if pdf_links %}
+  <span class="footer__pdf-links">
+    {% for link in pdf_links %}<a href="{{ link.href }}" target="_blank" rel="noopener">{{ link.label }}</a>{% endfor %}
+  </span>
+  {% endif %}
+</footer>
+{% endif %}
